@@ -6,13 +6,13 @@ This repo deals with the ISIC 2019 dataset for multiclass classification of skin
 
 The required installed packages for this repo are:
 
-numpy==1.18.4
-tensorflow==2.2.0
-cv2==4.2.0
-pandas==1.0.3
-Werkzeug==1.0.1
-Flask==1.1.2
-Pillow==7.0.0
+- numpy==1.18.4
+- tensorflow==2.2.0
+- cv2==4.2.0
+- pandas==1.0.3
+- Werkzeug==1.0.1
+- Flask==1.1.2
+- Pillow==7.0.0
 
 Directory Setup
 ```bash
