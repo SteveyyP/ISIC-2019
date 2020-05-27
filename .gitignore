@@ -13,7 +13,7 @@ ISIC_2019**
 *.h5
 
 # Ignore Cache Files
-__pycache__*
+__pycache__/
 
 # Ignore VS Code
 .vscode/
