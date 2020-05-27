@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{%block heading%}
+    Skin Lesion Detection
+{%endblock%}
+
+{%block body%}
+<script>
+    
+</script>
+<div>
+    <form action='/' method="POST" enctype="multipart/form-data">
+        <input id='uploaded-image' type="file" name="image">
+        <input type="submit">
+    </form>
+</div>
+<div>
+    <table>
+        <tr>
+
+        </tr>
+        <tr>
+            <td><img id='uploaded-img' src="{{ url_for('static', filename=full_filename) }}" height='150' width='150' alt='uploaded img'></td>
+            <td>
+                The uploaded image is of class "{{message[1]}}" ({{message[0]}})
+                <br>
+                <br>
+                {{lesion_description[0]}}
+                <br>
+                You can learn more at: {{lesion_description[1]}}
+            </td>
+        </tr>
+    </table>
+</div>
+{%endblock%}

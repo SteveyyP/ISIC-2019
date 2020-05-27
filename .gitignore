@@ -1,0 +1,19 @@
+# Ignore all files and directories 
+# starting with ISIC_2019*
+ISIC_2019*
+ISIC_2019**
+
+# Ignore all npy files
+*.npy
+
+# Ignore all .json
+*.json
+
+# Ignore all weights
+*.h5
+
+# Ignore Cache Files
+__pycache__*
+
+# Ignore VS Code
+.vscode/
