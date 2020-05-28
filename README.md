@@ -79,3 +79,19 @@ ISIC
 ### app.py
 
 app.py is the Flask webapp that can be run to make inferences on images. When launched, the file make take some time to load, this is due to the ML model being loaded in the background. Once running, upload an image of a skin lesion of file type (.png, .jpg, .tiff) and click the submit button. The web app will then make a prediction on the type of skin lesion as well as provide resources to learn more about that specific skin lesion
+
+### Dockerfile
+
+The docker file can be built and run using the following three commands in successive order:
+
+```bash
+docker build -t flask-ml:latest .
+```
+
+```bash
+docker run -d -p 5000:5000 flask-ml
+```
+
+```bash
+docker run flask-ml
+```
