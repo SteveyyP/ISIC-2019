@@ -117,19 +117,6 @@ def decode_prediction(prediction):
     return classes[np.argmax(prediction)], labels[np.argmax(prediction)]
 
 
-def class_description(lesion):
-    '''
-    Get a body of text providing information about the lesion type
-
-    Input
-    lesion: str - type of lesion
-    lesion_dict: dict - dictionary that contains information about
-
-    Output
-    body: str - body of text about lesion type
-    '''
-
-
 if __name__ == '__main__':
 
     # Get current dir
@@ -137,7 +124,7 @@ if __name__ == '__main__':
 
     # Define Image Path
     image = 'ISIC_0073252.jpg'
-    image = os.path.join(main_dir, 'uploads/', image)
+    image = os.path.join(main_dir, 'static', 'uploads/', image)
 
     # Load model
     model = load_ml_model()

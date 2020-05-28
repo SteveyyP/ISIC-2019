@@ -1,4 +1,4 @@
-FROM python:3.7-slim
+FROM jjanzic/docker-python3-opencv
 COPY static/ /app
 COPY templates/ /app
 COPY ISIC_preprocessing.py /app
@@ -10,6 +10,6 @@ RUN apt-get update \
     && apt-get install gcc -y \
     && apt-get clean
 WORKDIR /app
-ENV PATH=/root/.local/bin:$PATH
+ENV PATH=/root/.local/bin:${PATH}
 RUN pip install --user -r requirements.txt
 CMD ["python", "/app/app.py"]
