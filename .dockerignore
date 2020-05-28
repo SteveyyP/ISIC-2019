@@ -1,0 +1,10 @@
+# Ignore These Files
+ISIC_2019*
+ISIC_2019*/*
+*.csv
+*.md
+*.git
+datasets/*
+Callbacks/*
+*.npy
+*.vscode
