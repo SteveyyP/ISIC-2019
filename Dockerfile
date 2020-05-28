@@ -1,11 +1,5 @@
 FROM jjanzic/docker-python3-opencv
-COPY static/ /app
-COPY templates/ /app
-COPY ISIC_preprocessing.py /app
-COPY app.py /app
-COPY predict_api.py /app
-COPY lesion_dict.py /app
-COPY requirements.txt /app
+COPY . /app
 RUN apt-get update \
     && apt-get install gcc -y \
     && apt-get clean
