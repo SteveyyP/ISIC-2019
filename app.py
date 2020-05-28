@@ -5,8 +5,8 @@ from lesion_dict import get_lesion_info
 import os
 
 # Setup Variables
-dir = os.path.dirname(__name__)
-UPLOAD_FOLDER = os.path.join(dir, 'uploads/')
+wk_dir = os.path.dirname(__name__)
+UPLOAD_FOLDER = os.path.join(wk_dir, 'uploads/')
 ALLOWED_EXTENSIONS = {'png', 'tiff', 'jpg'}
 file_list = []
 
@@ -15,7 +15,7 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # Load Model
-model = load_ml_model()
+model = load_ml_model(wk_dir)
 
 
 # Function to check if filename is acceptable
@@ -50,7 +50,7 @@ def index():
             file_list.append(image_location)
 
             # Make Prediction
-            pred = make_prediction(image_source, model=model, model_loaded=True)
+            pred = make_prediction(image_source, model=model, main_dir=wk_dir, model_loaded=True)
 
             # Decode Prediction
             decoded = decode_prediction(pred)

@@ -13,15 +13,24 @@ from tensorflow.keras.models import model_from_json
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 
-def load_ml_model():
+def load_ml_model(main_dir):
+    '''
+    Load Skin-Lesion model from directory
+
+    Input
+    main_dir: str - current working directory
+
+    Output
+    model: object - loaded model
+    '''
     # Read JSON
-    json_file = open('static/models/model.json', 'r')
+    json_file = open(os.path.join(main_dir, 'static', 'models', 'model.json'), 'r')
     loaded_model_json = json_file.read()
     json_file.close()
     # Load model from JSON
     model = model_from_json(loaded_model_json)
     # Load weights
-    model.load_weights("static/models/model_weights.h5")
+    model.load_weights(os.path.join(main_dir, 'static', 'models', 'model_weights.h5'))
 
     return model
 
@@ -63,14 +72,15 @@ def preprocess_image(image):
     return img
 
 
-def make_prediction(image, model, model_loaded=False):
+def make_prediction(image, model, main_dir, model_loaded=False):
     '''
     Make prediction about type of skin lesion
 
     Input
     image: str - path to image file
-    model_loaded: bool - indicates whether the model is already loaded
+    main_dir: str - path of root directory
     model: object - keras model
+    model_loaded: bool - indicates whether the model is already loaded
 
     Output
     preds: list - list of probabilities for each class
@@ -78,7 +88,7 @@ def make_prediction(image, model, model_loaded=False):
 
     if model_loaded is False:
         # Load model
-        model = load_ml_model()
+        model = load_ml_model(main_dir)
     else:
         # Set model to model
         model = model
@@ -121,17 +131,21 @@ if __name__ == '__main__':
 
     # Get current dir
     main_dir = os.path.dirname(os.path.realpath(__file__))
-
+    print(main_dir)
+    '''
     # Define Image Path
     image = 'ISIC_0073252.jpg'
     image = os.path.join(main_dir, 'static', 'uploads/', image)
-
+    '''
     # Load model
-    model = load_ml_model()
-
+    model = load_ml_model(main_dir)
+    if model:
+        print(1)
+    '''
     # Make prediction
     pred = make_prediction(image, model_loaded=True, model=model)
 
     # Print Result
     print(pred)
     print(decode_prediction(pred))
+    '''
