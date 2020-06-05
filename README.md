@@ -32,10 +32,11 @@ Directory Setup
 ```
 ### Data
 
-Raw data can be directly downloaded from the ISIC website (https://challenge2019.isic-archive.com/data.html)
-Model weights can be download from the following drive link (https://drive.google.com/open?id=1087rbiEJwO9EJMNsLjSPg-7xqCsoXOMW)
-Processed Vectors can be downloaded from the following drive link (https://drive.google.com/open?id=144n6Q0VZIkMnEzgqSjAuANPEre7NjmFk)
-Training
+- Raw data can be directly downloaded from the ISIC website (https://challenge2019.isic-archive.com/data.html)
+- Model weights can be download from the following drive link and are saved to static/models/ (https://drive.google.com/file/d/1-XgRO-R-wltjo3HipUCsufjIufNjrON4/view?usp=sharing)
+- Processed Vectors can be downloaded from the following drive link (https://drive.google.com/open?id=144n6Q0VZIkMnEzgqSjAuANPEre7NjmFk)
+
+### Training
 
 The model was trained in two steps
 
